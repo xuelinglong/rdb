@@ -1,0 +1,17 @@
+.PublicTabbar {
+  width: 100%;
+  height: 48px;
+  position: fixed;
+  bottom: 0%;
+  background: aliceblue;
+  display: flex;
+}
+
+.TabbarItem {
+  flex: 1;
+  line-height: 48px;
+}
+
+.selected {
+  color: #FF8903;
+}

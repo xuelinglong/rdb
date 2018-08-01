@@ -1,0 +1,9 @@
+.message {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 48px;
+  left: 0px;
+  bottom: 48xp;
+  text-align: center;
+}
