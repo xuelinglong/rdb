@@ -1,10 +1,12 @@
 .home {
   width: 100%;
-  // height: auto;
+  height: auto;
   position: fixed;
   top: 48px;
   left: 0px;
-  bottom: 48xp;
+  bottom: 48px;
+  overflow-x: hidden;
+  overflow-y: auto;
   text-align: center;
   background: #e0e0e0;
 }
