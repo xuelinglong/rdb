@@ -1,9 +1,10 @@
 .home {
   width: 100%;
-  height: auto;
+  // height: auto;
   position: fixed;
   top: 48px;
   left: 0px;
   bottom: 48xp;
   text-align: center;
+  background: #e0e0e0;
 }

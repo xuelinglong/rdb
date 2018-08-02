@@ -3,15 +3,18 @@
   height: 48px;
   position: fixed;
   bottom: 0%;
-  background: aliceblue;
+  color: #ffffff;
+  background: #37474f;
   display: flex;
 }
 
 .TabbarItem {
   flex: 1;
   line-height: 48px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .selected {
-  color: #FF8903;
+  color:#66bb6a;
 }

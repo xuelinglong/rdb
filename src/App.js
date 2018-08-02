@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PublicHeader from './components/header/Header';
 import PublicTabbar from './components/tabbar/Tabbar';
 import './App.css';
-import Main from './router.js';
+import { BrowserRouter } from 'react-router-dom';
+
+import Main from './router';
 
 class App extends Component {
   constructor(props){
@@ -28,7 +30,7 @@ class App extends Component {
         this.setState({
           title: "发布"
         })
-      } else if(this.state.selected === 'my') {
+      } else if(this.state.selected === 'user') {
         this.setState({
           title: "我的"
         })
@@ -37,11 +39,13 @@ class App extends Component {
   }
   render() {
     return (
+      <BrowserRouter>
       <div className="App">
         <PublicHeader name={this.state.title}/>
         <Main />
         <PublicTabbar callBack={this.changeChild.bind(this)} />
       </div>
+      </BrowserRouter>
     );
   }
 }
