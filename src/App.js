@@ -37,12 +37,13 @@ class App extends Component {
       }
     });
   }
+
   render() {
     return (
       <BrowserRouter>
       <div className="App">
         <PublicHeader name={this.state.title}/>
-        <Main />
+        <Main tab={this.state.tab} />
         <PublicTabbar callBack={this.changeChild.bind(this)} />
       </div>
       </BrowserRouter>

@@ -1,0 +1,21 @@
+.PublicMenu {
+  width: 100%;
+  height: 48px;
+  position: fixed;
+  top: 48px;
+  bottom: 0%;
+  color: #ffffff;
+  background: #37474f;
+  display: flex;
+}
+
+.menuItem {
+  flex: 1;
+  line-height: 48px;
+  color: #ffffff;
+}
+
+.menuSelected {
+  color:#66bb6a;
+  background: rgba(0, 0, 0, 0.2);
+}

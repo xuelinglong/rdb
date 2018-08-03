@@ -10,13 +10,13 @@ export const apis = {
 
 export const actions = {
   get:(url, params, cb) => {
-    axios.get(url, params).then(res => {
+    axios.get(url, {params: params}).then(res => {
       let DATA = res.data.data;
       cb && cb(DATA);
     })
   },
   post:(url, params, cb) => {
-    axios.post(url, {params}).then(res => {
+    axios.post(url, params).then(res => {
       let DATA = res.data;
       cb && cb(DATA);
     })
