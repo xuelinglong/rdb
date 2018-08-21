@@ -8,6 +8,7 @@ export default class Home extends Component {
     this.state = {
       accesstoken: "af0a22ca-d49f-47ec-afef-51b9cabf4c3c",
       loginData: {},
+      userInfo: {},
       success: false
     }
   }
@@ -16,15 +17,30 @@ export default class Home extends Component {
     var params = {
       accesstoken: this.state.accesstoken
     }
-    actions.post(apis.login.url, params,(data) => {
+    actions.post(apis.login.url, params, (data) => {
       if(data) {
         this.setState({
           loginData: data
         }, () => {
+          // 登陆成功获取用户信息
+          this.getUserInfo();
           this.setState({
             success: true
           })
         });
+      }
+    })
+  }
+
+  getUserInfo() {
+    var params = {
+      loginname: this.state.loginData.loginname
+    }
+    actions.get(apis.userInfo.url + this.state.loginData.loginname, params, (data) => {
+      if(data) {
+        this.setState({
+          userInfo: data
+        })
       }
     })
   }
