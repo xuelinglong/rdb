@@ -14,37 +14,14 @@ class App extends Component {
       title: "首页"
     }
   }
-  changeChild(data){
-    this.setState({
-      selected: data
-    }, () => {
-      if(this.state.selected === 'topics') {
-        this.setState({
-          title: "首页"
-        })
-      } else if(this.state.selected === 'message') {
-        this.setState({
-          title: "消息"
-        })
-      } else if(this.state.selected === 'push') {
-        this.setState({
-          title: "发布"
-        })
-      } else if(this.state.selected === 'user') {
-        this.setState({
-          title: "我的"
-        })
-      }
-    });
-  }
 
   render() {
     return (
       <BrowserRouter>
       <div className="App">
-        <PublicHeader name={this.state.title}/>
+        <PublicHeader />
         <Main tab={this.state.tab} />
-        <PublicTabbar callBack={this.changeChild.bind(this)} />
+        <PublicTabbar />
       </div>
       </BrowserRouter>
     );

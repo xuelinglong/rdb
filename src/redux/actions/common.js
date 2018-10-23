@@ -1,8 +1,9 @@
 import * as type from './type'
 
-export const changeTitle = (title)=> {
-  return {
-    type: type.CHANGE_TITLE,
-    title
-  }
+export const changeTab = (tab, title) => dispatch => {
+  dispatch ({
+    type: type.CHANGE_TAB,
+    tab: tab,
+    title: title
+  })
 }
