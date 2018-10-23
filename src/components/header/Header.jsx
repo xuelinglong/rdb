@@ -19,7 +19,7 @@ class PublicHeader extends Component {
 }
 
 const mapStateToProps = state => ({
-  title: state.common.changeTab.title
+  title: state.common.title
 })
 
 export default connect(mapStateToProps, { changeTab })(PublicHeader);

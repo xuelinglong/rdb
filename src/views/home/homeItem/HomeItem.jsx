@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './HomeItem.css';
 
 
@@ -16,7 +17,8 @@ export default class HomeItem extends Component {
       <div>
         {
           list&&list.map((item,index)=>(
-            <div className="homeItem" key={item.id}>
+            <NavLink key={item.id} to={`/topicDetail/${item.id}`}>
+            <div className="homeItem">
               <div className="homeItem-top-box">
                 <div className="homeItem-author-img">
                   <img className="homeItem-author" src={item.author.avatar_url} alt="msg" />
@@ -36,11 +38,10 @@ export default class HomeItem extends Component {
                 </div>
               </div>
             </div>
+            </NavLink>
           ))
         }  
-      </div>
-      
-     
+      </div>    
     )
   }
 }

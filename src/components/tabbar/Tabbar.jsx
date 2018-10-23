@@ -37,7 +37,7 @@ class PublicTabbar extends Component {
 }
 
 const mapStateToProps = state => ({
-  selected: state.common.changeTab.tab
+  selected: state.common.tab
 })
 
 export default connect(mapStateToProps, { changeTab })(PublicTabbar);

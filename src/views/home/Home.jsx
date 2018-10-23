@@ -1,50 +1,58 @@
 import React, { Component } from 'react';
-import { apis, actions } from './../../redux/request.js';
 import './Home.css';
+import PublicHeader from './../../components/header/Header';
+import PublicTabbar from './../../components/tabbar/Tabbar';
 import PublicMenu from './../../components/menu/Menu';
 import HomeItem from './homeItem/HomeItem';
+import { connect } from 'react-redux';
+import { fetchTopics } from './../../redux/actions/topics.js';
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       list: [],
       tab: 'all'
     }
+
   }
 
-  changeMenu(data) {
-    this.setState({
-      tab: data,
-    }, () => {
-      this.getTopics();
-    })
+  changeMenu(menu,page) {
+    this.getTopics(menu,page);
   }
 
   componentWillMount() {
-    this.getTopics();
+    this.getTopics('all',0);
   }
 
-  getTopics() {
+  getTopics = (menu,page) => {
     var params = {
-      tab: this.state.tab,
-      page: 0,
-      limit: 20
+      tab: menu? menu: this.props.menu,
+      page: page ? page : this.props.page,
+      limit: this.props.limit
     }
-    actions.get(apis.getTopics.url, params,(data) => {
-      if(data) {
-        this.setState({
-          list: data
-        });
-      }
-    })
+    this.props.fetchTopics(params,page)
   }
+
   render() {
     return (
-      <div className="home">
-        <PublicMenu menuChange={this.changeMenu.bind(this)}/>
-        <HomeItem  list={this.state.list}/>
+      <div>
+        <PublicHeader />
+        <div className="home">
+          <PublicMenu menuChange={this.changeMenu.bind(this)}/>
+          <HomeItem list={this.props.topicsList}/>
+        </div>
+        <PublicTabbar />
       </div>
     )
   }
 }
+
+const mapStateToProps = state => ({
+  topicsList: state.topics.topicsList,
+  page: state.topics.page,
+  limit: state.topics.limit,
+  menu: state.common.menu
+})
+
+export default connect(mapStateToProps, { fetchTopics })(Home);

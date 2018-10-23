@@ -7,3 +7,11 @@ export const changeTab = (tab, title) => dispatch => {
     title: title
   })
 }
+
+export const changeMenu = (menu,cb) => dispatch => {
+  dispatch ({
+    type: type.CHANGE_MENU,
+    menu: menu
+  })
+  cb && cb(menu)
+}

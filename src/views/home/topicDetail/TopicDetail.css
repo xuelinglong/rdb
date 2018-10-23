@@ -1,0 +1,45 @@
+.topicDetail{
+  height: auto;
+}
+.Topbar {
+  height: 48px;
+  padding: 0px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #263238;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.Topbar-arrow {
+  width: 30px;
+}
+.Topbar-disqus {
+  flex: 1;
+}
+.Topbar-collect {
+  width: 30px;
+}
+.topicDetail-title {
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  position: relative;
+  top: 48px;
+}
+.topicDetail-author{
+  padding: 0 24px;
+  margin-bottom: 20px;
+  position: relative;
+  top: 48px;
+  text-align: left;
+}
+.topicDetail-content {
+  border-top: 1px solid #eee;
+  position: relative;
+  top: 48px;
+  overflow-y: auto;
+}

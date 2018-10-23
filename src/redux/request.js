@@ -6,6 +6,9 @@ export const apis = {
   getTopics: {
     url: axios.defaults.baseURL + 'topics'
   },
+  getTopicDetail: {
+    url: axios.defaults.baseURL + 'topic/'
+  },
   // 用户登录
   login: {
     url: axios.defaults.baseURL + 'accesstoken'

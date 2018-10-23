@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './User.css';
+import PublicHeader from './../../components/header/Header';
+import PublicTabbar from './../../components/tabbar/Tabbar';
 import { connect } from 'react-redux';
 import { login, logOut, fetchUserInfo } from './../../redux/actions/user.js';
 
@@ -27,37 +29,41 @@ class User extends Component {
 
   render() {
     return (
-      <div className="user">
-      {
-         !this.props.success ?
-         <div>
-          <div className="accesstoken">
-            token: 
-            <input type="text" className="accesstoken-input" placeholder={ this.state.accesstoken }/>
-          </div>
-          <button className="login" onClick={ this.login.bind(this) }>登陆</button>
-          </div> : <div>
-            <div className="User-author-image">
-              <img className="User-image" src={ this.props.userData.avatar_url} alt="usr" /><br/>
-              <span className="User-loginname">{ this.props.userData.loginname }</span>
+      <div>
+        <PublicHeader />
+        <div className="user">
+        {
+          !this.props.success ?
+          <div>
+            <div className="accesstoken">
+              token: 
+              <input type="text" className="accesstoken-input" placeholder={ this.state.accesstoken }/>
             </div>
-            <div className="User-list">
-              <div className="User-listItem">我收藏的话题
-                <span className="link"> > </span>
-                <span className="bradge"></span>
+            <button className="login" onClick={ this.login.bind(this) }>登陆</button>
+            </div> : <div>
+              <div className="User-author-image">
+                <img className="User-image" src={ this.props.userData.avatar_url} alt="usr" /><br/>
+                <span className="User-loginname">{ this.props.userData.loginname }</span>
               </div>
-              <div className="User-listItem">我参与的话题
-                <span className="link"> > </span>
-                <span className="bradge"></span>
+              <div className="User-list">
+                <div className="User-listItem">我收藏的话题
+                  <span className="link"> > </span>
+                  <span className="bradge"></span>
+                </div>
+                <div className="User-listItem">我参与的话题
+                  <span className="link"> > </span>
+                  <span className="bradge"></span>
+                </div>
+                <div className="User-listItem">我最近的话题
+                  <span className="link"> > </span>
+                  <span className="bradge"></span>
+                </div>
               </div>
-              <div className="User-listItem">我最近的话题
-                <span className="link"> > </span>
-                <span className="bradge"></span>
-              </div>
+              <button className="loginOut" onClick={ this.loginOut.bind(this) }>退出登陆</button>
             </div>
-            <button className="loginOut" onClick={ this.loginOut.bind(this) }>退出登陆</button>
-          </div>
-        } 
+          } 
+        </div>
+        <PublicTabbar />
       </div>
     )
   }

@@ -19,9 +19,9 @@ class App extends Component {
     return (
       <BrowserRouter>
       <div className="App">
-        <PublicHeader />
-        <Main tab={this.state.tab} />
-        <PublicTabbar />
+        {/* <PublicHeader /> */}
+        <Main />
+        {/* <PublicTabbar /> */}
       </div>
       </BrowserRouter>
     );
