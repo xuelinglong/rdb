@@ -10,7 +10,9 @@ const initialState = {
     id: '',
     success: false
   },
-  userInfo: {}
+  userInfo: {},
+  hasReadMessages: [],
+  hasnotReadMessages: []
 }
 
 const user = (state = initialState, action)=> {
@@ -29,6 +31,11 @@ const user = (state = initialState, action)=> {
     case type.FETCH_USER_INFO:
       return Object.assign({}, state, {
         userInfo: action.userInfo
+      })
+    case type.FETCH_MSG:
+      return Object.assign({}, state, {
+        hasnotReadMessages: action.hasnotReadMessages,
+        hasReadMessages: action.hasReadMessages
       })
     // default的情况下返回旧的state
     default:

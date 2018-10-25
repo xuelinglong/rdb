@@ -3,7 +3,7 @@ import './User.css';
 import PublicHeader from './../../components/header/Header';
 import PublicTabbar from './../../components/tabbar/Tabbar';
 import { connect } from 'react-redux';
-import { login, logOut, fetchUserInfo } from './../../redux/actions/user.js';
+import { login, logOut, fetchUserInfo, fetchMsg } from './../../redux/actions/user.js';
 
 class User extends Component {
   constructor(props) {
@@ -19,7 +19,9 @@ class User extends Component {
   login() {
     let self = this;
     this.props.login(this.props.accesstoken,(loginname)=>{
-      self.props.fetchUserInfo(loginname)
+      self.props.fetchUserInfo(loginname,()=>{
+        self.props.fetchMsg(self.props.accesstoken)
+      })
     });
   }
 
@@ -75,4 +77,4 @@ const mapStateToProps = state => ({
   userData: state.user.userData
 })
 
-export default connect(mapStateToProps, { login, logOut, fetchUserInfo })(User);
+export default connect(mapStateToProps, { login, logOut, fetchUserInfo, fetchMsg })(User);

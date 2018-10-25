@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './DisqusItem.css';
+import { FormateDate } from './../../../../script/commonFun';
 
 
 export default class HomeItem extends Component {
-  constructor(props) {
-    super(props);
-  }
   
   render() {
     let list = this.props.list;
@@ -13,11 +11,11 @@ export default class HomeItem extends Component {
       <div>
         {
           list&&list.map((item,index)=>(
-          <div className="disqusItem">
+          <div className="disqusItem" key={item.id}>
             <div className="author-box">
               <img src={item.author.avatar_url} alt="author"/>
               <span className="author-name">{item.author.loginname}</span>
-              <span className="author-time">时间</span>
+              <span className="author-time">{FormateDate(item.create_at)}</span>
             </div>
             <div className="content-box" dangerouslySetInnerHTML={{ __html: item.content}} style={{textAlign: 'left'}}></div>
             <div className="action-box">

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PublicHeader from './components/header/Header';
-import PublicTabbar from './components/tabbar/Tabbar';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 

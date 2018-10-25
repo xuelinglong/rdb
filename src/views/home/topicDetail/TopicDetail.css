@@ -1,5 +1,10 @@
 .topicDetail{
   height: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .Topbar {
   height: 48px;
@@ -30,16 +35,27 @@
   position: relative;
   top: 48px;
 }
-.topicDetail-author{
-  padding: 0 24px;
+.topicDetail-authorBox {
+  width: 100%;
+  display: flex;
   margin-bottom: 20px;
   position: relative;
   top: 48px;
+}
+.topicDetail-author{
   text-align: left;
+  flex: 1;
+  padding-left: 24px;
+}
+.topicDetail-time{
+  text-align: right;
+  flex: 1;
+  padding-right: 24px;
 }
 .topicDetail-content {
   border-top: 1px solid #eee;
   position: relative;
   top: 48px;
+  bottom: 0;
   overflow-y: auto;
 }

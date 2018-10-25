@@ -3,6 +3,7 @@ import './TopicDetail.css';
 import { connect } from 'react-redux';
 import { fetchTopicDetail } from './../../../redux/actions/topics.js';
 import { GetQueryString } from './../../../script/GetQueryString';
+import { FormateDate } from './../../../script/commonFun';
 
 class TopicDetail extends Component {
   constructor(props) {
@@ -46,7 +47,10 @@ class TopicDetail extends Component {
           <span className="Topbar-collect"></span>
         </div>
         <div className="topicDetail-title">{this.props.topicObj.title}</div>
+        <div className="topicDetail-authorBox">
         {this.props.topicObj.author && <div className="topicDetail-author">{this.props.topicObj.author.loginname}</div>}
+        {this.props.topicObj.create_at && <div className="topicDetail-time">{FormateDate(this.props.topicObj.create_at)}</div>}
+        </div>
         <div className="topicDetail-content" style={{textAlign: 'left'}} dangerouslySetInnerHTML={{ __html: this.props.topicObj.content}}></div>
       </div>
     )

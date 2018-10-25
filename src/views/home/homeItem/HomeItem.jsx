@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './HomeItem.css';
+import { FormateDate } from './../../../script/commonFun';
 
 
 export default class HomeItem extends Component {
@@ -30,7 +31,7 @@ export default class HomeItem extends Component {
               </div>
               <div className="homeItem-icon-box">
                 <div className="homeItem-icon-left">
-                  <span className="homeItem-author-name">{ item.author.loginname }</span>
+                  <span className="homeItem-author-name">{ item.author.loginname }&nbsp;{FormateDate(item.create_at)}</span>
                 </div>
                 <div className="homeItem-icon-right">
                   <span className="homeItem-visit-count">{ item.visit_count }</span>

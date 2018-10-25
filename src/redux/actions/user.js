@@ -27,12 +27,25 @@ export const logOut = () => dispatch => {
   })
 }
 
-export const fetchUserInfo = (loginname) => dispatch => {
+export const fetchUserInfo = (loginname,cb) => dispatch => {
   actions.get(apis.userInfo.url+loginname,{loginname:loginname},(data)=>{
     if(data){
       dispatch ({
         type: type.FETCH_USER_INFO,
         userInfo: data,
+      })
+      cb&&cb();
+    }
+  })
+}
+
+export const fetchMsg = (accesstoken) => dispatch => {
+  actions.get(apis.fetchMsg.url,{accesstoken:accesstoken},(data)=>{
+    if(data){
+      dispatch ({
+        type: type.FETCH_MSG,
+        hasnotReadMessages: data.hasnot_read_messages,
+        hasReadMessages: data.has_read_messages
       })
     }
   })

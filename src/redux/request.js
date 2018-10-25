@@ -16,6 +16,10 @@ export const apis = {
   // 获取用户info
   userInfo: {
     url: axios.defaults.baseURL + 'user/'
+  },
+  // 获取已读和未读消息
+  fetchMsg: {
+    url: axios.defaults.baseURL + 'messages'
   }
 }
 
