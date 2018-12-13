@@ -34,7 +34,7 @@ export default class HomeItem extends Component {
                   <span className="homeItem-author-name">{ item.author.loginname }&nbsp;{FormateDate(item.create_at)}</span>
                 </div>
                 <div className="homeItem-icon-right">
-                  <span className="homeItem-visit-count">{ item.visit_count }</span>
+                  <span className="homeItem-visit-count">{ item.visit_count }</span>&nbsp;
                   <span className="homeItem-reply-count">{ item.reply_count }</span>
                 </div>
               </div>

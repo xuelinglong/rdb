@@ -41,7 +41,7 @@ class User extends Component {
               token: 
               <input type="text" className="accesstoken-input" placeholder={ this.state.accesstoken }/>
             </div>
-            <button className="login" onClick={ this.login.bind(this) }>登陆</button>
+            <button className="login" onClick={ this.login.bind(this) }>登录</button>
             </div> : <div>
               <div className="User-author-image">
                 <img className="User-image" src={ this.props.userData.avatar_url} alt="usr" /><br/>

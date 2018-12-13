@@ -37,6 +37,9 @@
   font-size: 1.2rem;
   color: #ffffff;
   background: #424242;
+  border: none;
+  outline: none;
+  border-radius: 3px;
 }
 
 .User-author-image {

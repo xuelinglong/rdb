@@ -4,7 +4,24 @@
   position: fixed;
   top: 48px;
   left: 0px;
-  bottom: 48xp;
+  bottom: 48px;
   text-align: center;
-  background: #e0e0e0;
+}
+.logoImg {
+  width: 80%;
+  height: 30%;
+  margin-top: 10%;
+}
+.trapToLogin {
+  width: 80%;
+  height: 40px;
+  margin-top: 15%;
+  background: #263238;
+  color: #ffffff;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  line-height: 40px;
+  border: none;
+  outline: none;
 }
