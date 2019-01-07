@@ -1,0 +1,111 @@
+#infinity {
+  position: relative;
+  width: 212px;
+  height: 100px;
+  text-shadow: 10px 10px 5px black;
+}
+
+#infinity:before,#infinity:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border: 20px solid red;
+  border-radius: 50px 50px 0 50px;
+  transform: rotate(-45deg);
+}
+
+#infinity:after {
+  left: auto;
+  right: 0;
+  border-radius: 50px 50px 0 50px;
+  transform: rotate(135deg);
+}
+
+
+
+#magnifying-glass {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 10px solid red;
+  position: relative;
+  border-radius: 35px;
+}
+#magnifying-glass::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -25px;
+  bottom: -10px;
+  background: red;
+  width: 35px;
+  height: 8px;
+  transform: rotate(45deg);
+}
+
+
+
+/* .box {
+  height: 140px;
+  width: 200px;
+  border: 3px outset #D3D3D3;
+  border-radius: 12px;
+  background: #989898;
+  background: linear-gradient(120deg, #989898, 100px, red, 100px);
+} */
+
+.box {
+  overflow: hidden;
+  display: flex;
+}
+
+.list1,
+.list2 {
+  width: 60px;
+  float: left;
+}
+
+.list1 {
+  background-color: #B7FF7C;
+}
+
+.list2 {
+  background-color: #F9715F;
+}
+
+/* dl dt{
+  float: left;
+} */
+
+dl{
+  float: left;
+}
+
+
+
+.iii {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background: #F9715F;
+  text-shadow: 10px 10px 5px black;
+}
+
+.iii:before,.iii:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background: #000000;
+  margin-left: 100px;
+  margin-top: 100px;
+}

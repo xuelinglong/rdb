@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from './views/home/Home';
+// import Home from './views/home/Home';
+import Test from './views/home/Test';
 import Message from './views/msg/Message';
 import Push from './views/push/Push';
 import User from './views/user/User';
@@ -11,7 +12,7 @@ import TopicDetailDisaus from './views/home/disqus/Disqus';
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Home}/>
+      <Route exact path='/' component={Test}/>
       <Route exact path='/topicDetail/:id' component={TopicDetail}/>
       <Route exact path='/topicDetail/:id/disqus' component={TopicDetailDisaus}/>
       <Route path='/message' component={Message}/>

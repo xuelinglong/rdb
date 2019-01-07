@@ -103,7 +103,7 @@ export const move2Left = (num, digit) => {
   arr.splice(arr.length - digit, 0, ".");
   return arr.join("") * 1;
 }
-// Multiply使用方法：a参数为原金额，以分为单位的话b参数是100
+// Multiply使用方法：a参数为原金额，b参数是100最后得到以分为单位，b参数为1的话得到以元为单位
 export const Multiply = (a, b) => {
   var d = getMoveDigit(a, b);
   return move2Left(move2Right(a, d) * move2Right(b, d), d * 2);
