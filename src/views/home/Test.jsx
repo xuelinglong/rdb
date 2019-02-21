@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Test.css';
-// import Arrow from './arrow/Arrow.jsx';
 
 export default class Test extends Component {
   constructor(props) {
